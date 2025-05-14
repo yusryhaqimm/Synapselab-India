@@ -6,7 +6,7 @@ function Home() {
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundImage: `url('/bg-lab.jpg')`,
+        backgroundImage: `url('/bg-lab.jpg')`, // Make sure this is in /public or correct path
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -31,32 +31,26 @@ function Home() {
 
       {/* Content */}
       <Box sx={{ zIndex: 2 }}>
-        {/* Logo with bounce */}
+        {/* Logo with bounce animation */}
         <motion.div
           initial={{ y: -30 }}
           animate={{ y: [-30, 0, -15, 0, -5, 0] }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <Box
-            sx={{
-              backgroundColor: "rgba(255, 255, 255, 0.85)",
-              px: 4,
-              py: 2,
-              borderRadius: 2,
-              mb: 5,
-              boxShadow: 3,
-              display: "inline-block",
-            }}
-          >
+          <Box sx={{ mb: 5 }}>
             <img
-              src="/logo.png"
+              src="/synapselogo.png" // <-- Make sure this file has no background
               alt="SynapseLab Logo"
-              style={{ width: 180, height: "auto" }}
+              style={{
+                width: 300,
+                height: "auto",
+                filter: "drop-shadow(0 0 6px rgba(255,255,255,0.4))", // Optional glow
+              }}
             />
           </Box>
         </motion.div>
 
-        {/* Title */}
+        {/* Coming Soon Title */}
         <Typography
           variant="h2"
           fontWeight={700}
